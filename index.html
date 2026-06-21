@@ -10,13 +10,16 @@
 <meta property="og:title" content="Частный бухгалтер Елена Соколова — услуги в Вашем регионе">
 <meta property="og:description" content="Бухгалтерские услуги для малого бизнеса, ИП и самозанятых. Онлайн.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#0b1628">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & BASE ===== */
+/* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px; line-height: 1.6; color: #1e293b; background: #fff;
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
@@ -27,27 +30,30 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 /* ===== VARIABLES ===== */
 :root {
-  --primary: #0f172a;
-  --primary-light: #1e293b;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --gold: #f59e0b;
-  --gold-light: #fbbf24;
-  --bg-alt: #f8fafc;
+  --primary: #0b1628;
+  --primary-light: #1a2a4a;
+  --accent: #c9952e;
+  --accent-hover: #b8842a;
+  --accent-muted: rgba(201,149,46,.1);
+  --green: #1a3a32;
+  --bg-alt: #f2f4f7;
   --text: #1e293b;
-  --text-secondary: #64748b;
-  --border: #e2e8f0;
+  --text-secondary: #556274;
+  --border: #e4e7ec;
   --radius: 12px;
-  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-  --shadow-lg: 0 10px 25px -5px rgba(0,0,0,.08), 0 8px 10px -6px rgba(0,0,0,.04);
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 28px -8px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.04);
+  --shadow-card: 0 1px 4px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.04);
   --max-w: 1200px;
-  --pad: clamp(1rem, 5vw, 2rem);
+  --pad: clamp(1.25rem, 5vw, 2rem);
 }
+
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; color: var(--primary); }
-h1 { font-size: clamp(1.75rem, 5vw, 3rem); letter-spacing: -.02em; }
-h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); text-align: center; margin-bottom: .5em; }
-h3 { font-size: 1.2rem; }
+h1 { font-size: clamp(1.85rem, 5vw, 3.2rem); letter-spacing: -.025em; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); text-align: center; margin-bottom: .5em; letter-spacing: -.015em; }
+h3 { font-size: 1.15rem; font-weight: 600; }
 .text-secondary { color: var(--text-secondary); }
 .text-center { text-align: center; }
 
@@ -55,103 +61,130 @@ h3 { font-size: 1.2rem; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
 
 /* ===== SECTION ===== */
-section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
+section { padding: clamp(4rem, 8vw, 6rem) 0; }
 .section-label {
-  display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .08em;
+  display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
 }
-.section-subtitle { max-width: 640px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1.05rem; }
+.section-subtitle {
+  max-width: 620px; margin: 0 auto 3rem; color: var(--text-secondary);
+  font-size: 1.05rem; line-height: 1.6;
+}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: .1s; }
-.reveal-delay-2 { transition-delay: .2s; }
-.reveal-delay-3 { transition-delay: .3s; }
-.reveal-delay-4 { transition-delay: .4s; }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+.reveal-d4 { transition-delay: .4s; }
+.reveal-d5 { transition-delay: .5s; }
 
 /* ===== HEADER ===== */
 .header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
-.header .container { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.logo { font-weight: 700; font-size: 1rem; color: var(--primary); }
+.header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-weight: 700; font-size: 1.05rem; color: var(--primary); letter-spacing: -.02em; }
 .logo span { color: var(--accent); }
-.header-contacts { display: flex; gap: .75rem; align-items: center; }
-.header-contacts a {
+.header-actions { display: flex; align-items: center; gap: .5rem; }
+.header-actions a {
   display: inline-flex; align-items: center; justify-content: center;
   width: 36px; height: 36px; border-radius: 50%;
   transition: background .2s; color: var(--primary);
 }
-.header-contacts a:hover { background: var(--bg-alt); }
-.header-contacts a svg { width: 18px; height: 18px; }
-.header-phone { font-size: .875rem; font-weight: 600; color: var(--accent); display: none; }
-@media (min-width: 768px) { .header-phone { display: inline; } }
+.header-actions a:hover { background: var(--bg-alt); }
+.header-actions a svg { width: 18px; height: 18px; }
+.header-phone {
+  display: none; align-items: center; gap: .35rem;
+  padding: .4rem .85rem; border-radius: 100px;
+  background: var(--accent-muted); color: var(--accent);
+  font-size: .85rem; font-weight: 600;
+}
+.header-phone svg { width: 14px; height: 14px; }
+@media (min-width: 768px) { .header-phone { display: inline-flex; } }
 
 /* ===== HERO ===== */
 .hero {
-  padding: 0; min-height: calc(100vh - 60px); display: flex; align-items: center;
-  background: linear-gradient(135deg, #f8fafc 0%, #fff 50%, #f1f5f9 100%);
+  padding: 0; min-height: calc(100vh - 64px); display: flex; align-items: center;
+  background: linear-gradient(165deg, #f7f8fa 0%, #fff 45%, #eff1f5 100%);
   overflow: hidden; position: relative;
 }
 .hero::before {
-  content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%;
-  background: radial-gradient(ellipse, rgba(37,99,235,.04) 0%, transparent 70%);
+  content: ''; position: absolute; top: -40%; right: -15%; width: 50%; height: 180%;
+  background: radial-gradient(ellipse, rgba(201,149,46,.05) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero .container { display: grid; gap: 2.5rem; padding: 2rem var(--pad); align-items: center; width: 100%; position: relative; }
+.hero .container {
+  display: grid; gap: 3rem; padding: 2.5rem var(--pad); align-items: center;
+  width: 100%; position: relative;
+}
 @media (min-width: 900px) {
-  .hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; padding: 3rem var(--pad); }
+  .hero .container { grid-template-columns: 1fr 1fr; gap: 5rem; padding: 3rem var(--pad); }
 }
 .hero-content { animation: fadeIn .8s ease; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: rgba(37,99,235,.08); color: var(--accent); padding: .4rem 1rem;
-  border-radius: 100px; font-size: .8rem; font-weight: 500; margin-bottom: 1.25rem;
+.hero-tag {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .35rem 1rem; border-radius: 100px;
+  background: var(--accent-muted); color: var(--accent);
+  font-size: .78rem; font-weight: 600; margin-bottom: 1.5rem;
 }
-.hero h1 { margin-bottom: .6rem; }
-.hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--text-secondary); max-width: 520px; margin-bottom: 1.75rem; line-height: 1.5; }
-.hero-trust { display: grid; gap: .65rem; margin-bottom: 2rem; }
-.hero-trust li { display: flex; align-items: center; gap: .6rem; font-size: .9rem; color: var(--primary-light); }
-.hero-trust li svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--gold); }
+.hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.hero h1 { margin-bottom: .75rem; }
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--text-secondary);
+  max-width: 520px; margin-bottom: 2rem; line-height: 1.6;
+}
+.hero-trust { display: grid; gap: .7rem; margin-bottom: 2.25rem; }
+.hero-trust li {
+  display: flex; align-items: center; gap: .65rem; font-size: .9rem;
+  color: var(--text); font-weight: 500;
+}
+.hero-trust li svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--accent); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .65rem; }
 .btn {
-  display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem;
-  border-radius: 8px; font-weight: 600; font-size: .9rem; transition: all .2s;
+  display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem;
+  border-radius: 8px; font-weight: 600; font-size: .9rem;
+  transition: all .25s; white-space: nowrap;
 }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-.btn-outline { border: 1.5px solid var(--border); color: var(--primary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(37,99,235,.04); }
+.btn-primary {
+  background: var(--primary); color: #fff;
+}
+.btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.btn-outline {
+  border: 1.5px solid var(--border); color: var(--text); background: rgba(255,255,255,.6);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.hero-image {
-  display: flex; justify-content: center; align-items: center;
-  animation: fadeIn .8s ease .2s both;
-}
-.hero-image figure {
-  position: relative; border-radius: var(--radius); overflow: hidden;
+.hero-image { display: flex; justify-content: center; align-items: center; animation: fadeIn .8s ease .2s both; }
+.hero-figure {
+  position: relative; border-radius: 16px; overflow: hidden;
   box-shadow: var(--shadow-lg); max-width: 460px; width: 100%;
 }
-.hero-image figure::before {
+.hero-figure::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(15,23,42,.3));
+  background: linear-gradient(180deg, transparent 55%, rgba(11,22,40,.35));
   z-index: 1; pointer-events: none;
 }
-.hero-image img { width: 100%; height: 450px; object-fit: cover; }
-.hero-image figcaption {
+.hero-figure img { width: 100%; height: 460px; object-fit: cover; }
+.hero-caption {
   position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-  padding: 1.25rem; color: #fff; font-weight: 600; font-size: .9rem;
+  padding: 1.5rem; color: #fff;
 }
-.hero-image figcaption small { display: block; font-weight: 400; opacity: .8; font-size: .8rem; margin-top: .2rem; }
+.hero-caption strong { display: block; font-weight: 600; font-size: .95rem; }
+.hero-caption small { display: block; font-weight: 400; opacity: .7; font-size: .8rem; margin-top: .15rem; }
 @media (max-width: 899px) {
   .hero { min-height: 0; }
-  .hero-image figure { max-width: 320px; }
-  .hero-image img { height: 300px; }
   .hero-image { order: -1; }
+  .hero-figure { max-width: 320px; }
+  .hero-figure img { height: 280px; }
+}
+@media (max-width: 639px) {
+  .hero-cta .btn { flex: 1; justify-content: center; font-size: .85rem; padding: .68rem 1rem; }
+  .hero-trust { grid-template-columns: 1fr; }
 }
 
 /* ===== SERVICES ===== */
@@ -160,125 +193,134 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
 .service-card {
-  background: #fff; border-radius: var(--radius); padding: 2rem;
-  box-shadow: var(--shadow); transition: all .3s;
-  border: 1px solid transparent; position: relative; overflow: hidden;
+  background: #fff; border-radius: var(--radius); padding: 2.25rem;
+  box-shadow: var(--shadow-card); transition: all .3s;
+  border: 1px solid var(--border); position: relative;
 }
-.service-card:hover { box-shadow: var(--shadow-lg); border-color: var(--border); transform: translateY(-2px); }
-.service-card .icon {
-  width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1rem; background: rgba(37,99,235,.08); color: var(--accent);
+.service-card:hover {
+  box-shadow: var(--shadow-lg); border-color: transparent;
+  transform: translateY(-3px);
 }
-.service-card .icon svg { width: 24px; height: 24px; }
-.service-card h3 { margin-bottom: .5rem; }
-.service-card p { font-size: .9rem; color: var(--text-secondary); line-height: 1.55; }
+.service-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-muted); color: var(--accent); margin-bottom: 1.25rem;
+}
+.service-icon svg { width: 24px; height: 24px; }
+.service-card h3 { margin-bottom: .6rem; }
+.service-card p { font-size: .9rem; color: var(--text-secondary); line-height: 1.6; }
 
 /* ===== BENEFITS ===== */
 .benefits-grid { display: grid; gap: 1.25rem; }
 @media (min-width: 640px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 960px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
 .benefit-item {
-  display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem;
-  border-radius: var(--radius); transition: background .2s;
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.5rem; border-radius: var(--radius);
+  transition: background .25s;
 }
 .benefit-item:hover { background: var(--bg-alt); }
 .benefit-icon {
-  flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(37,99,235,.08); color: var(--accent);
+  background: var(--accent-muted); color: var(--accent);
 }
 .benefit-icon svg { width: 18px; height: 18px; }
-.benefit-text h4 { font-size: .95rem; margin-bottom: .2rem; }
-.benefit-text p { font-size: .85rem; color: var(--text-secondary); line-height: 1.45; }
+.benefit-text h4 { font-size: .95rem; font-weight: 600; margin-bottom: .25rem; }
+.benefit-text p { font-size: .85rem; color: var(--text-secondary); line-height: 1.5; }
 
 /* ===== HOW IT WORKS ===== */
 .how { background: var(--bg-alt); }
-.steps { display: grid; gap: 1.5rem; counter-reset: step; max-width: 800px; margin: 1rem auto 0; }
+.steps { display: grid; gap: 1.25rem; max-width: 780px; margin: 1rem auto 0; counter-reset: step; }
 .step {
   display: flex; gap: 1.25rem; align-items: flex-start;
-  background: #fff; border-radius: var(--radius); padding: 1.5rem;
-  box-shadow: var(--shadow); counter-increment: step; position: relative;
+  background: #fff; border-radius: var(--radius); padding: 1.75rem;
+  box-shadow: var(--shadow-card); counter-increment: step;
+  border: 1px solid var(--border);
 }
-.step::before {
-  content: counter(step); flex-shrink: 0;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--accent); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: .9rem;
+.step-num {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent); color: #fff; display: flex;
+  align-items: center; justify-content: center; font-weight: 700; font-size: .85rem;
 }
-.step-content h3 { font-size: 1rem; margin-bottom: .25rem; }
-.step-content p { font-size: .88rem; color: var(--text-secondary); line-height: 1.45; }
+.step-body h3 { font-size: 1rem; font-weight: 600; margin-bottom: .3rem; }
+.step-body p { font-size: .88rem; color: var(--text-secondary); line-height: 1.55; }
 
 /* ===== AUDIENCE ===== */
-.audience-grid { display: grid; gap: 1.25rem; }
+.audience-grid { display: grid; gap: 1.5rem; }
 @media (min-width: 640px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { .audience-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 960px) { .audience-grid { grid-template-columns: repeat(4, 1fr); } }
 .audience-card {
-  text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius);
+  text-align: center; padding: 2.25rem 1.5rem; border-radius: var(--radius);
   border: 1px solid var(--border); transition: all .3s;
 }
-.audience-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
+.audience-card:hover {
+  box-shadow: var(--shadow-lg); border-color: transparent;
+  transform: translateY(-2px);
+}
 .audience-icon {
-  width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1rem;
+  width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1.25rem;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(37,99,235,.08); color: var(--accent);
+  background: var(--accent-muted); color: var(--accent);
 }
 .audience-icon svg { width: 26px; height: 26px; }
-.audience-card h3 { font-size: 1rem; margin-bottom: .4rem; }
-.audience-card p { font-size: .85rem; color: var(--text-secondary); }
+.audience-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; }
+.audience-card p { font-size: .85rem; color: var(--text-secondary); line-height: 1.55; }
 
 /* ===== FAQ ===== */
 .faq-list { max-width: 720px; margin: 1rem auto 0; }
-.faq-item {
-  border-bottom: 1px solid var(--border); padding: .85rem 0;
-}
+.faq-item { border-bottom: 1px solid var(--border); }
 .faq-question {
   width: 100%; display: flex; justify-content: space-between; align-items: center;
-  text-align: left; padding: .5rem 0; font-weight: 600; font-size: .95rem;
-  color: var(--primary); transition: color .2s;
+  text-align: left; padding: 1.1rem 0; font-weight: 600; font-size: .95rem;
+  color: var(--primary); transition: color .2s; gap: 1rem;
 }
 .faq-question:hover { color: var(--accent); }
-.faq-question svg { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s; color: var(--text-secondary); }
-.faq-item.open .faq-question svg { transform: rotate(180deg); }
-.faq-answer {
-  max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; padding: 0 1.5rem 0 0;
+.faq-question svg {
+  width: 20px; height: 20px; flex-shrink: 0;
+  transition: transform .35s ease; color: var(--text-secondary);
 }
-.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1rem; }
-.faq-answer p { font-size: .9rem; color: var(--text-secondary); line-height: 1.55; }
+.faq-item.open .faq-question svg { transform: rotate(180deg); color: var(--accent); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+  padding: 0 2rem 0 0;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+.faq-answer p { font-size: .9rem; color: var(--text-secondary); line-height: 1.6; }
 
 /* ===== FINAL CTA ===== */
 .cta-final {
   background: var(--primary); color: #fff; text-align: center;
 }
 .cta-final h2 { color: #fff; }
-.cta-final .section-subtitle { color: rgba(255,255,255,.65); }
+.cta-final .section-subtitle { color: rgba(255,255,255,.6); }
 .cta-final .hero-cta { justify-content: center; }
-.cta-final .btn-primary { background: #fff; color: var(--primary); }
-.cta-final .btn-primary:hover { background: var(--gold); color: #fff; }
-.cta-final .btn-outline { border-color: rgba(255,255,255,.25); color: #fff; }
-.cta-final .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.cta-final .btn-primary { background: var(--accent); color: var(--primary); }
+.cta-final .btn-primary:hover { background: var(--accent-hover); color: #fff; }
+.cta-final .btn-outline { border-color: rgba(255,255,255,.2); color: #fff; background: transparent; }
+.cta-final .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(201,149,46,.08); }
 
 /* ===== CONTACTS ===== */
-.contacts-grid {
-  display: grid; gap: 1.5rem; max-width: 600px; margin: 1rem auto 0;
-}
+.contacts-grid { display: grid; gap: 1.25rem; max-width: 560px; margin: 1rem auto 0; }
 .contact-item {
-  display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
+  display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem;
   border-radius: var(--radius); border: 1px solid var(--border);
-  transition: all .2s;
+  transition: all .25s;
 }
-.contact-item:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+.contact-item:hover { border-color: var(--accent); box-shadow: var(--shadow-card); }
 .contact-icon {
   width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(37,99,235,.08); color: var(--accent);
+  background: var(--accent-muted); color: var(--accent);
 }
 .contact-icon svg { width: 20px; height: 20px; }
 .contact-info { font-size: .95rem; font-weight: 600; }
 .contact-info small { display: block; font-weight: 400; font-size: .8rem; color: var(--text-secondary); margin-top: .15rem; }
-.contact-worknote {
-  text-align: center; margin-top: 2rem; font-size: .88rem; color: var(--text-secondary);
-  padding: 1rem; background: var(--bg-alt); border-radius: var(--radius);
+.contact-note {
+  text-align: center; margin-top: 2rem; font-size: .88rem;
+  color: var(--text-secondary); padding: 1.25rem;
+  background: var(--bg-alt); border-radius: var(--radius); line-height: 1.5;
 }
 
 /* ===== FOOTER ===== */
@@ -288,25 +330,29 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 }
 .footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
-.footer-links button { color: var(--text-secondary); font-size: .82rem; text-decoration: underline; text-underline-offset: 3px; }
+.footer-links button {
+  color: var(--text-secondary); font-size: .82rem; transition: color .2s;
+}
+.footer-links button::after { content: ''; display: block; height: 1px; background: var(--accent); transform: scaleX(0); transition: transform .2s; }
 .footer-links button:hover { color: var(--accent); }
+.footer-links button:hover::after { transform: scaleX(1); }
 
 /* ===== MODALS ===== */
 .modal-overlay {
   position: fixed; inset: 0; z-index: 1000;
-  background: rgba(15,23,42,.55); backdrop-filter: blur(4px);
+  background: rgba(11,22,40,.55); backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center;
   padding: 1rem; opacity: 0; pointer-events: none;
   transition: opacity .3s;
 }
 .modal-overlay.open { opacity: 1; pointer-events: auto; }
 .modal {
-  background: #fff; border-radius: var(--radius); max-width: 600px; width: 100%;
-  max-height: 80vh; overflow-y: auto; padding: 2rem;
-  transform: translateY(20px); transition: transform .3s;
+  background: #fff; border-radius: var(--radius); max-width: 620px; width: 100%;
+  max-height: 80vh; overflow-y: auto; padding: 2.25rem;
+  transform: translateY(24px) scale(.98); transition: transform .3s;
   position: relative;
 }
-.modal-overlay.open .modal { transform: translateY(0); }
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
 .modal-close {
   position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -315,35 +361,32 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 .modal-close:hover { background: var(--border); }
 .modal-close svg { width: 18px; height: 18px; }
 .modal h2 { font-size: 1.25rem; text-align: left; margin-bottom: 1rem; padding-right: 2rem; }
-.modal p, .modal li { font-size: .88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: .5rem; }
+.modal p, .modal li { font-size: .88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: .5rem; }
 .modal ul { padding-left: 1.25rem; list-style: disc; }
 
 /* ===== COOKIES BANNER ===== */
-.cookies-banner {
+.cookies {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
   background: var(--primary); color: rgba(255,255,255,.85);
   padding: 1rem var(--pad); font-size: .82rem; line-height: 1.5;
   transform: translateY(100%); transition: transform .4s ease;
 }
-.cookies-banner.show { transform: translateY(0); }
-.cookies-banner .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
-.cookies-banner a { color: var(--gold); text-decoration: underline; }
+.cookies.show { transform: translateY(0); }
+.cookies .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.cookies a { color: var(--accent); text-decoration: underline; }
 .cookies-btn {
-  background: #fff; color: var(--primary); padding: .5rem 1.25rem;
+  background: var(--accent); color: var(--primary); padding: .5rem 1.25rem;
   border-radius: 6px; font-weight: 600; font-size: .82rem; white-space: nowrap;
-  transition: background .2s;
+  transition: background .25s;
 }
-.cookies-btn:hover { background: var(--gold-light); }
+.cookies-btn:hover { background: var(--accent-hover); color: #fff; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 639px) {
-  .hero-cta .btn { flex: 1; justify-content: center; font-size: .85rem; padding: .65rem 1rem; }
-  .service-card { padding: 1.5rem; }
+  .service-card { padding: 1.75rem; }
   .benefit-item { padding: 1rem; }
   .modal { padding: 1.5rem; }
-}
-@media (min-width: 640px) {
-  .hero-trust { grid-template-columns: repeat(2, 1fr); }
+  .step { padding: 1.25rem; }
 }
 </style>
 </head>
@@ -353,9 +396,10 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 <header class="header" role="banner">
   <div class="container">
     <a href="#" class="logo">Бухгалтер<span>.</span></a>
-    <div class="header-contacts">
-      <a href="tel:+79990000000" aria-label="Позвонить">
+    <div class="header-actions">
+      <a href="tel:+79990000000" class="header-phone" aria-label="Позвонить">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +7 (999) 000-00-00
       </a>
       <a href="https://t.me/placeholder_username" target="_blank" rel="noopener" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -371,7 +415,7 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 <section class="hero" id="hero" aria-label="Главная">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge">Частный бухгалтер · Вашем регионе</div>
+      <div class="hero-tag">Частный бухгалтер · Ваш регион</div>
       <h1>Бухгалтер для вашего бизнеса — с заботой о цифрах</h1>
       <p class="hero-subtitle">Помогаю ИП, самозанятым и небольшим компаниям разобраться с налогами, отчётами и документами. Работаю онлайн по всей России.</p>
       <ul class="hero-trust">
@@ -387,9 +431,9 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
       </div>
     </div>
     <div class="hero-image">
-      <figure>
+      <figure class="hero-figure">
         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format" alt="Частный бухгалтер Елена Соколова" loading="lazy">
-        <figcaption>Елена Соколова<small>Частный бухгалтер</small></figcaption>
+        <figcaption class="hero-caption"><strong>Елена Соколова</strong><small>Частный бухгалтер</small></figcaption>
       </figure>
     </div>
   </div>
@@ -400,20 +444,20 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
   <div class="container">
     <div class="text-center reveal"><span class="section-label">Услуги</span></div>
     <h2 class="reveal">Что я предлагаю</h2>
-    <p class="section-subtitle text-center reveal">Каждая услугу можно получить онлайн — без визита в офис и лишних бумаг.</p>
+    <p class="section-subtitle text-center reveal">Каждую услугу можно получить онлайн — без визита в офис и лишних бумаг.</p>
     <div class="services-grid">
-      <article class="service-card reveal reveal-delay-1">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+      <article class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
         <h3>Онлайн-консультация бухгалтера</h3>
         <p>Разбор вашей ситуации, ответы на вопросы по налогам и отчётности. Помогу выбрать систему налогообложения, разобраться с взносами и штрафами.</p>
       </article>
-      <article class="service-card reveal reveal-delay-2">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <article class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <h3>Справка 3-НДФЛ</h3>
         <p>Подготовка и проверка декларации 3-НДФЛ. Помогу с налоговыми вычетами — за обучение, лечение, покупку жилья. Отправка через личный кабинет.</p>
       </article>
-      <article class="service-card reveal reveal-delay-3">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <article class="service-card reveal reveal-d3">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <h3>Бухгалтерская и налоговая отчётность для ИП</h3>
         <p>Полное ведение учёта для ИП на УСН, ПСН и самозанятых. Расчёт налогов, подготовка и сдача отчётности, контроль сроков.</p>
       </article>
@@ -428,56 +472,56 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
     <h2 class="reveal">Преимущества работы</h2>
     <p class="section-subtitle text-center reveal">Не просто бухгалтер, а надёжный партнёр, который думает о вашем спокойствии.</p>
     <div class="benefits-grid">
-      <div class="benefit-item reveal reveal-delay-1">
+      <div class="benefit-item reveal reveal-d1">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="benefit-text">
           <h4>Личный бухгалтер</h4>
           <p>Один контакт по всем вопросам — без передачи дела сторонним людям.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-2">
+      <div class="benefit-item reveal reveal-d2">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="benefit-text">
           <h4>Опыт более 8 лет</h4>
           <p>Работала с ИП на УСН, ПСН, самозанятыми и небольшими ООО.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-3">
+      <div class="benefit-item reveal reveal-d3">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="benefit-text">
           <h4>Полная ответственность</h4>
           <p>Отвечаю за сдачу отчётности в срок и корректность расчётов.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-4">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="12" y="16" text-anchor="middle" font-size="14" font-weight="bold">₽</text></svg></div>
+      <div class="benefit-item reveal reveal-d4">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <div class="benefit-text">
           <h4>Фиксированная стоимость</h4>
           <p>Заранее знаете сумму — никаких скрытых платежей и наценок.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-1">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="benefit-item reveal reveal-d1">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <div class="benefit-text">
           <h4>Электронный документооборот</h4>
           <p>Все документы в электронном виде — никаких папок и курьеров.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-2">
+      <div class="benefit-item reveal reveal-d2">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
         <div class="benefit-text">
           <h4>Напоминаю о сроках</h4>
           <p>Вы ничего не пропускаете — я предупреждаю о всех отчётных датах.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-3">
+      <div class="benefit-item reveal reveal-d3">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="benefit-text">
           <h4>Быстрая обратная связь</h4>
           <p>Отвечаю на вопросы в рабочие часы в течение 1–2 часов.</p>
         </div>
       </div>
-      <div class="benefit-item reveal reveal-delay-4">
+      <div class="benefit-item reveal reveal-d4">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
         <div class="benefit-text">
           <h4>Помощь с оптимизацией</h4>
@@ -495,32 +539,37 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
     <h2 class="reveal">Этапы сотрудничества</h2>
     <p class="section-subtitle text-center reveal">Всё прозрачно и понятно — от первого звонка до сдачи отчётности.</p>
     <div class="steps">
-      <div class="step reveal reveal-delay-1">
-        <div class="step-content">
+      <div class="step reveal reveal-d1">
+        <div class="step-num">1</div>
+        <div class="step-body">
           <h3>Знакомство</h3>
           <p>Вы звоните или пишете в Telegram/VK. Я бесплатно консультирую, знакомлюсь с вашим бизнесом и задачами.</p>
         </div>
       </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-content">
+      <div class="step reveal reveal-d2">
+        <div class="step-num">2</div>
+        <div class="step-body">
           <h3>Договор и стоимость</h3>
           <p>Согласовываем объём работ и фиксируем стоимость. Заключаем договор — онлайн или лично.</p>
         </div>
       </div>
-      <div class="step reveal reveal-delay-3">
-        <div class="step-content">
+      <div class="step reveal reveal-d3">
+        <div class="step-num">3</div>
+        <div class="step-body">
           <h3>Передача документов</h3>
           <p>Вы присылаете документы в электронном виде. Я проверяю их, задаю уточняющие вопросы по необходимости.</p>
         </div>
       </div>
-      <div class="step reveal reveal-delay-4">
-        <div class="step-content">
+      <div class="step reveal reveal-d4">
+        <div class="step-num">4</div>
+        <div class="step-body">
           <h3>Ведение учёта</h3>
           <p>Я веду учёт, рассчитываю налоги, готовлю отчётность. Вы в любой момент можете запросить промежуточные данные.</p>
         </div>
       </div>
-      <div class="step reveal reveal-delay-5">
-        <div class="step-content">
+      <div class="step reveal reveal-d5">
+        <div class="step-num">5</div>
+        <div class="step-body">
           <h3>Сдача отчётности</h3>
           <p>Я подаю декларации и отчёты в налоговую, ПФР и другие органы в установленные сроки.</p>
         </div>
@@ -536,22 +585,22 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
     <h2 class="reveal">Кому подходят мои услуги</h2>
     <p class="section-subtitle text-center reveal">Чаще всего ко мне обращаются в таких ситуациях:</p>
     <div class="audience-grid">
-      <article class="audience-card reveal reveal-delay-1">
+      <article class="audience-card reveal reveal-d1">
         <div class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
         <h3>ИП на УСН</h3>
         <p>Хотите разобраться с налогами, но не понимаете, как заполнять декларации и что такое авансовые платежи.</p>
       </article>
-      <article class="audience-card reveal reveal-delay-2">
+      <article class="audience-card reveal reveal-d2">
         <div class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Самозанятые</h3>
         <p>Нужна помощь с отчётами и чековая база. Хотите легально работать, но не хотите погружаться в бюрократию.</p>
       </article>
-      <article class="audience-card reveal reveal-delay-3">
+      <article class="audience-card reveal reveal-d3">
         <div class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Небольшие компании</h3>
         <p>Нет смысла держать штатного бухгалтера. Нужен специалист на аутсорсе — надёжный и без лишних затрат.</p>
       </article>
-      <article class="audience-card reveal reveal-delay-4">
+      <article class="audience-card reveal reveal-d4">
         <div class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3>Стартапы</h3>
         <p>Открываете дело и хотите сразу наладить учёт. Помогу выбрать систему налогообложения и избежать ошибок.</p>
@@ -661,21 +710,21 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
     <h2 class="reveal">Свяжитесь со мной</h2>
     <p class="section-subtitle text-center reveal">Выберите удобный способ связи — я на связи в рабочие часы.</p>
     <div class="contacts-grid">
-      <a href="tel:+79990000000" class="contact-item reveal reveal-delay-1">
+      <a href="tel:+79990000000" class="contact-item reveal reveal-d1">
         <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <div class="contact-info">
           +7 (999) 000-00-00
           <small>Звонок или WhatsApp</small>
         </div>
       </a>
-      <a href="https://t.me/placeholder_username" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-2">
+      <a href="https://t.me/placeholder_username" target="_blank" rel="noopener" class="contact-item reveal reveal-d2">
         <div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
         <div class="contact-info">
           @placeholder_username
           <small>Telegram</small>
         </div>
       </a>
-      <a href="https://vk.com/placeholder_id" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-3">
+      <a href="https://vk.com/placeholder_id" target="_blank" rel="noopener" class="contact-item reveal reveal-d3">
         <div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.732 0 0 3.732 0 8.316v7.368C0 20.268 3.732 24 8.316 24h7.368C20.268 24 24 20.268 24 15.684V8.316C24 3.732 20.268 0 15.684 0zm3.4 16.416h-1.932c-.588 0-.78-.432-1.848-1.5-.936-.876-1.344-1.008-1.572-1.008-.324 0-.408.084-.408.492v1.296c0 .36-.12.552-1.056.552-1.56 0-3.288-.96-4.512-2.748-1.548-1.908-1.944-3.024-1.944-3.288 0-.132.084-.252.312-.252h1.944c.336 0 .456.144.588.492.552 1.512 1.512 2.856 1.896 2.856.144 0 .216-.072.216-.468v-1.8c-.072-.852-.504-.924-.504-1.236 0-.156.12-.288.324-.288h3.048c.264 0 .348.144.348.468v2.532c0 .264.108.348.18.348.144 0 .264-.084.528-.348.912-1.008 1.548-2.568 1.548-2.568.084-.18.228-.324.552-.324h1.944c.396 0 .48.204.396.468-.144.672-2.076 3.3-2.076 3.3-.168.276-.204.384 0 .648.144.216.66.648.996.996.612.648 1.08 1.188 1.248 1.548.168.36-.012.54-.408.54z"/></svg></div>
         <div class="contact-info">
           vk.com/placeholder_id
@@ -683,7 +732,7 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
         </div>
       </a>
     </div>
-    <div class="contact-worknote reveal">
+    <div class="contact-note reveal">
       Работаю онлайн по всей России. Для клиентов в Москве возможна личная встреча.<br>
       Режим работы: пн–пт, 10:00 – 19:00 по Мск.
     </div>
@@ -747,9 +796,9 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 </div>
 
 <!-- ===== COOKIES BANNER ===== -->
-<div class="cookies-banner" id="cookies-banner" role="alert">
+<div class="cookies" id="cookies-banner" role="alert">
   <div class="container">
-    <span>Этот сайт использует cookies для аналитики. Продолжая использовать сайт, вы соглашаетесь с <button type="button" data-modal="cookies" style="background:none;border:none;color:var(--gold);text-decoration:underline;cursor:pointer;font-size:inherit;">обработкой данных</button>.</span>
+    <span>Этот сайт использует cookies для аналитики. Продолжая использовать сайт, вы соглашаетесь с <button type="button" data-modal="cookies" style="background:none;border:none;color:var(--accent);text-decoration:underline;cursor:pointer;font-size:inherit;">обработкой данных</button>.</span>
     <button class="cookies-btn" id="cookies-accept">Принять</button>
   </div>
 </div>
@@ -763,13 +812,8 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
     var banner = document.getElementById('cookies-banner');
     var acceptBtn = document.getElementById('cookies-accept');
     var accepted = localStorage.getItem('cookies_accepted');
-
-    if (accepted === 'true') {
-      banner.classList.remove('show');
-    } else {
-      setTimeout(function() { banner.classList.add('show'); }, 500);
-    }
-
+    if (accepted === 'true') { banner.classList.remove('show'); }
+    else { setTimeout(function() { banner.classList.add('show'); }, 600); }
     acceptBtn.addEventListener('click', function() {
       localStorage.setItem('cookies_accepted', 'true');
       banner.classList.remove('show');
@@ -790,23 +834,17 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
       var modalContent = overlay.querySelector('.modal');
       if (modalContent) modalContent.focus();
     }
-
     function closeAllModals() {
       overlays.forEach(function(o) { o.classList.remove('open'); });
       document.body.style.overflow = '';
     }
-
     triggers.forEach(function(el) {
       el.addEventListener('click', function(e) {
         e.preventDefault();
         openModal(el.getAttribute('data-modal'));
       });
     });
-
-    closeBtns.forEach(function(el) {
-      el.addEventListener('click', closeAllModals);
-    });
-
+    closeBtns.forEach(function(el) { el.addEventListener('click', closeAllModals); });
     overlays.forEach(function(overlay) {
       overlay.addEventListener('click', function(e) {
         if (e.target === overlay) closeAllModals();
@@ -815,7 +853,6 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
         e.stopPropagation();
       });
     });
-
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeAllModals();
     });
@@ -823,17 +860,15 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 
   // ===== FAQ ACCORDION =====
   (function() {
-    var faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(function(item) {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function(item) {
       var question = item.querySelector('.faq-question');
       question.addEventListener('click', function() {
         var isOpen = item.classList.contains('open');
-
-        faqItems.forEach(function(i) {
+        items.forEach(function(i) {
           i.classList.remove('open');
           i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
-
         if (!isOpen) {
           item.classList.add('open');
           item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
@@ -846,35 +881,17 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
   (function() {
     var els = document.querySelectorAll('.reveal');
     if (!els.length) return;
-
-    function checkVisibility() {
-      var windowHeight = window.innerHeight;
+    function check() {
+      var wh = window.innerHeight;
       els.forEach(function(el) {
-        var rect = el.getBoundingClientRect();
-        if (rect.top < windowHeight - 60) {
-          el.classList.add('visible');
-        }
+        if (el.getBoundingClientRect().top < wh - 60) el.classList.add('visible');
       });
     }
-
-    checkVisibility();
-    window.addEventListener('scroll', checkVisibility, { passive: true });
-    window.addEventListener('resize', checkVisibility, { passive: true });
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check, { passive: true });
   })();
 
-})();
-</script>
-
-<!-- Yandex.Metrika counter placeholder -->
-<script>
-// Здесь будет код Яндекс.Метрики после регистрации счётчика
-// Примечание: счётчик активируется только после принятия cookies пользователем
-(function() {
-  var accepted = localStorage.getItem('cookies_accepted');
-  if (accepted === 'true') {
-    // После регистрации счётчика вставьте сюда код метрики
-    // console.log('Яндекс.Метрика: согласие получено');
-  }
 })();
 </script>
 
