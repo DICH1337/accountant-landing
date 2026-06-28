@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Частный бухгалтер Елена Соколова — услуги для ИП и самозанятых</title>
+<meta name="description" content="Бухгалтерские услуги онлайн. Консультации, 3-НДФЛ, отчётность для ИП.">
+<meta name="theme-color" content="#111">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#1a1a1a;background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+
+/* SNAP SECTIONS */
+.snap{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;position:relative;overflow:hidden}
+
+/* NAV DOTS */
+.nav-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
+.nav-dots a{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.15);transition:all .3s;display:block}
+.nav-dots a:hover,.nav-dots a.active{background:#000;transform:scale(1.3)}
+
+/* SECTION 1 — HERO FULL-BLEED */
+.hero{background:#111;color:#fff;padding:0;display:grid;grid-template-rows:1fr auto}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.3}
+.hero-inner{position:relative;z-index:1;padding:6rem 2rem 4rem;max-width:900px;margin:0 auto;text-align:center}
+.hero-kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.2rem,7vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:#d4a84b}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 2.5rem;line-height:1.6}
+.hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:100px;font-weight:600;font-size:.9rem;transition:all .25s}
+.btn-gold{background:#d4a84b;color:#111}
+.btn-gold:hover{background:#e0b85c;transform:translateY(-2px)}
+.btn-outline-light{border:1.5px solid rgba(255,255,255,.25);color:#fff}
+.btn-outline-light:hover{border-color:#d4a84b;color:#d4a84b}
+.btn svg{width:16px;height:16px}
+.hero-trust{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.hero-trust li{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.hero-trust li strong{display:block;font-size:1.5rem;font-weight:700;color:#d4a84b;margin-bottom:.15rem}
+@media(max-width:639px){.hero-trust{gap:1.5rem}.hero-trust li{text-align:center}}
+
+/* SECTION 2 — SERVICES MAGAZINE */
+.services{background:#f8f6f3;padding:5rem 2rem}
+.services-header{max-width:700px;margin:0 auto 3rem;text-align:center}
+.services-header .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b}
+.services-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin:.75rem 0 1rem}
+.services-header p{color:#666;font-size:1rem}
+.services-mag{display:grid;gap:2px;background:#ddd;border-radius:16px;overflow:hidden;max-width:1000px;margin:0 auto}
+@media(min-width:768px){.services-mag{grid-template-columns:1fr 1fr}.services-mag article:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}}
+.service-mag-card{background:#fff;padding:2.5rem;position:relative;transition:all .4s}
+.service-mag-card:hover{background:#fefcf9}
+.service-mag-num{font-size:3rem;font-weight:800;color:rgba(212,168,75,.15);line-height:1;margin-bottom:.5rem;font-family:'Playfair Display',serif}
+.service-mag-card h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+.service-mag-card p{font-size:.88rem;color:#666;line-height:1.55;max-width:380px}
+.service-mag-card::after{content:'→';position:absolute;bottom:1.5rem;right:1.5rem;font-size:1.2rem;color:#d4a84b;opacity:0;transition:opacity .3s}
+.service-mag-card:hover::after{opacity:1}
+
+/* SECTION 3 — BENEFITS TIMELINE */
+.benefits{background:#fff;padding:5rem 2rem}
+.benefits-inner{max-width:1000px;margin:0 auto}
+.benefits-inner h2{font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;margin-bottom:1rem}
+.benefits-inner>p{color:#666;margin-bottom:3rem;max-width:500px}
+.benefits-timeline{display:grid;gap:1px;background:#eee}
+@media(min-width:768px){.benefits-timeline{grid-template-columns:repeat(2,1fr)}}
+.benefit-tl{padding:1.75rem;position:relative;border-left:3px solid #d4a84b;margin-left:1rem;padding-left:1.5rem}
+.benefit-tl::before{content:'';position:absolute;left:-7px;top:2rem;width:11px;height:11px;border-radius:50%;background:#d4a84b}
+.benefit-tl h4{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.benefit-tl p{font-size:.84rem;color:#666;line-height:1.5}
+
+/* SECTION 4 — STEPS VISUAL */
+.steps-section{background:#111;color:#fff;padding:5rem 2rem}
+.steps-section .section-inner{max-width:900px;margin:0 auto;text-align:center}
+.steps-section .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b}
+.steps-section h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin:.75rem 0 3rem}
+.steps-visual{display:grid;gap:1.5rem;text-align:left;counter-reset:s}
+@media(min-width:768px){.steps-visual{grid-template-columns:repeat(5,1fr);gap:.5rem}}
+.step-vis{background:rgba(255,255,255,.04);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.06)}
+.step-vis-num{font-size:2rem;font-weight:800;color:rgba(212,168,75,.3);font-family:'Playfair Display',serif;margin-bottom:.5rem}
+.step-vis h3{font-size:.9rem;font-weight:600;margin-bottom:.3rem;color:#fff}
+.step-vis p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.45}
+
+/* SECTION 5 — AUDIENCE SPOTLIGHT */
+.spotlight{background:#f8f6f3;padding:5rem 2rem}
+.spotlight-inner{max-width:1000px;margin:0 auto}
+.spotlight-inner .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b}
+.spotlight-inner h2{font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;margin:.75rem 0 2.5rem}
+.spotlight-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.spotlight-grid{grid-template-columns:repeat(2,1fr)}}
+.spot-card{background:#fff;border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.spot-icon{width:48px;height:48px;border-radius:12px;background:rgba(212,168,75,.1);color:#d4a84b;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.spot-icon svg{width:22px;height:22px}
+.spot-card h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.spot-card p{font-size:.85rem;color:#666;line-height:1.5}
+
+/* SECTION 6 — FAQ ACCORDION */
+.faq-section{background:#fff;padding:5rem 2rem}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-inner .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b;text-align:center}
+.faq-inner h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;text-align:center;margin:.75rem 0 2.5rem}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem 0;font-weight:600;font-size:.95rem;text-align:left;border-bottom:1px solid #eee;transition:color .2s;gap:1rem}
+.faq-q:hover{color:#d4a84b}
+.faq-q span{font-size:1.2rem;transition:transform .3s}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;padding:0}
+.faq-item.open .faq-a{max-height:300px;padding:.5rem 0 1rem}
+.faq-a p{font-size:.88rem;color:#666;line-height:1.55}
+
+/* SECTION 7 — FINAL CTA */
+.final{background:linear-gradient(135deg,#111,#1a1a1a);color:#fff;padding:5rem 2rem;text-align:center}
+.final-inner{max-width:600px;margin:0 auto}
+.final h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:1rem;line-height:1.15}
+.final p{color:rgba(255,255,255,.5);margin-bottom:2rem}
+.final .btn-outline-light svg{width:16px;height:16px}
+
+/* FOOTER MINIMAL */
+.footer-min{text-align:center;padding:2rem;font-size:.8rem;color:#999}
+.footer-min a{color:#d4a84b}
+.footer-min .legal-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem}
+.footer-min .legal-links button{font-size:.78rem;color:#999;text-decoration:underline}
+
+/* MODALS */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;padding:2rem;transform:translateY(20px);transition:transform .3s;position:relative}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-close{position:absolute;top:1rem;right:1rem;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f5f5f5}
+.modal-close:hover{background:#eee}
+.modal-close svg{width:16px;height:16px}
+.modal h2{font-size:1.15rem;margin-bottom:1rem;padding-right:2rem}
+.modal p,.modal li{font-size:.85rem;color:#666;line-height:1.55;margin-bottom:.4rem}
+.modal ul{padding-left:1.25rem;list-style:disc}
+
+/* COOKIES */
+.cookies{position:fixed;bottom:0;left:0;right:0;z-index:150;background:#111;color:rgba(255,255,255,.7);padding:1rem 2rem;font-size:.8rem;transform:translateY(100%);transition:transform .35s}
+.cookies.show{transform:translateY(0)}
+.cookies .container{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem}
+.cookies .container a{color:#d4a84b;text-decoration:underline}
+.cookies-btn{background:#d4a84b;color:#111;padding:.4rem 1.2rem;border-radius:100px;font-weight:600;font-size:.8rem;white-space:nowrap;transition:background .2s}
+.cookies-btn:hover{background:#e0b85c}
+
+/* RESPONSIVE */
+@media(max-width:639px){.snap{min-height:0;scroll-snap-align:none}.nav-dots{display:none}.hero-inner{padding:4rem 1.5rem 3rem}.services{padding:3rem 1.5rem}.benefits{padding:3rem 1.5rem}.steps-section{padding:3rem 1.5rem}.spotlight{padding:3rem 1.5rem}.faq-section{padding:3rem 1.5rem}.final{padding:3rem 1.5rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav-dots" aria-label="Навигация">
+  <a href="#s1" aria-label="Главная"></a>
+  <a href="#s2" aria-label="Услуги"></a>
+  <a href="#s3" aria-label="Преимущества"></a>
+  <a href="#s4" aria-label="Процесс"></a>
+  <a href="#s5" aria-label="Клиенты"></a>
+  <a href="#s6" aria-label="FAQ"></a>
+  <a href="#s7" aria-label="Контакты"></a>
+</nav>
+
+<!-- HERO -->
+<section class="snap hero" id="s1">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&auto=format" alt="" loading="lazy"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">Частный бухгалтер</div>
+    <h1>Бухгалтер, который <em>освобождает</em> ваше время</h1>
+    <p class="hero-sub">ИП, самозанятые и малый бизнес — я беру на себя налоги, отчёты и документы. Работаю онлайн.</p>
+    <div class="hero-cta">
+      <a href="tel:+79990000000" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+      <a href="https://t.me/placeholder_username" target="_blank" rel="noopener" class="btn btn-outline-light"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a>
+      <a href="https://vk.com/placeholder_id" target="_blank" rel="noopener" class="btn btn-outline-light"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.732 0 0 3.732 0 8.316v7.368C0 20.268 3.732 24 8.316 24h7.368C20.268 24 24 20.268 24 15.684V8.316C24 3.732 20.268 0 15.684 0zm3.4 16.416h-1.932c-.588 0-.78-.432-1.848-1.5-.936-.876-1.344-1.008-1.572-1.008-.324 0-.408.084-.408.492v1.296c0 .36-.12.552-1.056.552-1.56 0-3.288-.96-4.512-2.748-1.548-1.908-1.944-3.024-1.944-3.288 0-.132.084-.252.312-.252h1.944c.336 0 .456.144.588.492.552 1.512 1.512 2.856 1.896 2.856.144 0 .216-.072.216-.468v-1.8c-.072-.852-.504-.924-.504-1.236 0-.156.12-.288.324-.288h3.048c.264 0 .348.144.348.468v2.532c0 .264.108.348.18.348.144 0 .264-.084.528-.348.912-1.008 1.548-2.568 1.548-2.568.084-.18.228-.324.552-.324h1.944c.396 0 .48.204.396.468-.144.672-2.076 3.3-2.076 3.3-.168.276-.204.384 0 .648.144.216.66.648.996.996.612.648 1.08 1.188 1.248 1.548.168.36-.012.54-.408.54z"/></svg>VK</a>
+    </div>
+    <ul class="hero-trust">
+      <li><strong>8+</strong> лет опыта</li>
+      <li><strong>50+</strong> довольных клиентов</li>
+      <li><strong>100%</strong> онлайн</li>
+      <li><strong>0</strong> скрытых платежей</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="snap services" id="s2">
+  <div class="services-header">
+    <div class="label">Услуги</div>
+    <h2>Что я могу сделать для вас</h2>
+    <p>Каждая услуга доступна онлайн — без визитов и бумажных писем.</p>
+  </div>
+  <div class="services-mag">
+    <article class="service-mag-card"><div class="service-mag-num">01</div><h3>Консультация бухгалтера</h3><p>Разбор вашей ситуации, ответы на вопросы по налогам, выбор системы налогообложения.</p></article>
+    <article class="service-mag-card"><div class="service-mag-num">02</div><h3>3-НДФЛ и вычеты</h3><p>Декларация, налоговые вычеты на обучение, лечение, жильё. Отправка через личный кабинет.</p></article>
+    <article class="service-mag-card"><div class="service-mag-num">03</div><h3>Бухгалтерия для ИП</h3><p>Полное ведение: учёт, расчёт налогов, отчётность в ФНС. УСН, ПСН, самозанятые.</p></article>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="snap benefits" id="s3">
+  <div class="benefits-inner">
+    <div class="label" style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b">Преимущества</div>
+    <h2>Почему вам стоит работать со мной</h2>
+    <p>Не просто бухгалтер, а человек, которому можно доверить финансы.</p>
+    <div class="benefits-timeline">
+      <div class="benefit-tl"><h4>Личное ведение</h4><p>Я лично веду ваш учёт — никакой передачи дела сторонним сотрудникам.</p></div>
+      <div class="benefit-tl"><h4>8 лет практики</h4><p>Работала со всеми режимами: УСН, ПСН, НПД, ООО на УСН.</p></div>
+      <div class="benefit-tl"><h4>Отвечаю головой</h4><p>Несу ответственность за сроки и корректность каждой поданной декларации.</p></div>
+      <div class="benefit-tl"><h4>Предсказуемый бюджет</h4><p>Фиксированная стоимость — никаких внезапных счетов.</p></div>
+      <div class="benefit-tl"><h4>Цифры без бумаги</h4><p>Полный электронный документооборот. Всё хранится в облаке.</p></div>
+      <div class="benefit-tl"><h4>Никаких дедлайнов</h4><p>Я помню о сроках и напоминаю вам. Вы просто работаете.</p></div>
+      <div class="benefit-tl"><h4>Отвечаю быстро</h4><p>Обычно отвечаю в течение часа в рабочее время.</p></div>
+      <div class="benefit-tl"><h4>Оптимизация по закону</h4><p>Помогаю снизить налоги легально — без серых схем.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="snap steps-section" id="s4">
+  <div class="section-inner">
+    <div class="label">Как мы работаем</div>
+    <h2>5 шагов к спокойствию</h2>
+    <div class="steps-visual">
+      <div class="step-vis"><div class="step-vis-num">01</div><h3>Знакомство</h3><p>Бесплатная консультация, изучаю ваш бизнес.</p></div>
+      <div class="step-vis"><div class="step-vis-num">02</div><h3>Договор</h3><p>Фиксируем объём и стоимость. Подписываем онлайн.</p></div>
+      <div class="step-vis"><div class="step-vis-num">03</div><h3>Документы</h3><p>Вы присылаете данные — я проверяю и систематизирую.</p></div>
+      <div class="step-vis"><div class="step-vis-num">04</div><h3>Учёт</h3><p>Веду учёт, рассчитываю налоги, готовлю отчётность.</p></div>
+      <div class="step-vis"><div class="step-vis-num">05</div><h3>Отчёты</h3><p>Подаю декларации в ФНС вовремя. Вы получаете подтверждение.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="snap spotlight" id="s5">
+  <div class="spotlight-inner">
+    <div class="label">Кому я нужна</div>
+    <h2>Кому подходят мои услуги</h2>
+    <div class="spotlight-grid">
+      <article class="spot-card">
+        <div class="spot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+        <div><h3>ИП на УСН</h3><p>Не понимаете, как считать авансовые платежи? Я заполню декларацию и объясню каждую цифру.</p></div>
+      </article>
+      <article class="spot-card">
+        <div class="spot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h3>Самозанятые</h3><p>Чеки, отчёты, взносы — без погружения в бюрократию. Вы работаете, я веду учёт.</p></div>
+      </article>
+      <article class="spot-card">
+        <div class="spot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><h3>Небольшие компании</h3><p>Держать штатного бухгалтера дорого. Аутсорс — надёжно и без overhead.</p></div>
+      </article>
+      <article class="spot-card">
+        <div class="spot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div><h3>Стартапы на старте</h3><p>Сразу наладить учёт, выбрать систему налогообложения, не наделать ошибок.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="snap faq-section" id="s6">
+  <div class="faq-inner">
+    <div class="label">FAQ</div>
+    <h2>Часто задаваемые вопросы</h2>
+    <div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Какие документы нужны для начала работы?<span>+</span></button><div class="faq-a"><p>Паспорт, ИНН, сведения о регистрации. Если уже работаете — последние отчёты. Я составлю список под вас.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Сколько стоят услуги?<span>+</span></button><div class="faq-a"><p>Консультация — бесплатно. Обслуживание ИП на УСН — от 5 000 ₽/мес. Цена после знакомства с делом.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Как часто передавать документы?<span>+</span></button><div class="faq-a"><p>1–2 раза в месяц. Можно чаще — договоримся.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Нет первичных документов. Что делать?<span>+</span></button><div class="faq-a"><p>Восстановлю учёт: запрошу дубликаты в банках и у контрагентов.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Как подаёте отчётность?<span>+</span></button><div class="faq-a"><p>Через ЭДО с усиленной подписью. Вы получаете подтверждение о приёме.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Нужно приезжать?<span>+</span></button><div class="faq-a"><p>Нет. Полностью онлайн. При желании можем встретиться лично.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Какие системы налогообложения?<span>+</span></button><div class="faq-a"><p>УСН 6% и 15%, ПСН, налог на профдоход (самозанятые).</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Что входит в сопровождение?<span>+</span></button><div class="faq-a"><p>Учёт, расчёт налогов, отчётность, контроль сроков, консультации — всё включено.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Конфиденциальность?<span>+</span></button><div class="faq-a"><p>NDA, защищённые каналы, доступ к данным только у меня.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Могу отказаться?<span>+</span></button><div class="faq-a"><p>В любой момент. Передам все документы и отчёты.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="snap final" id="s7">
+  <div class="final-inner">
+    <h2>Порядок в финансах —<br>спокойствие в бизнесе</h2>
+    <p>Позвоните или напишите — я бесплатно проконсультирую и отвечу на все вопросы.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="tel:+79990000000" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Позвонить</a>
+      <a href="https://t.me/placeholder_username" target="_blank" rel="noopener" class="btn btn-outline-light"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a>
+      <a href="https://vk.com/placeholder_id" target="_blank" rel="noopener" class="btn btn-outline-light"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.732 0 0 3.732 0 8.316v7.368C0 20.268 3.732 24 8.316 24h7.368C20.268 24 24 20.268 24 15.684V8.316C24 3.732 20.268 0 15.684 0zm3.4 16.416h-1.932c-.588 0-.78-.432-1.848-1.5-.936-.876-1.344-1.008-1.572-1.008-.324 0-.408.084-.408.492v1.296c0 .36-.12.552-1.056.552-1.56 0-3.288-.96-4.512-2.748-1.548-1.908-1.944-3.024-1.944-3.288 0-.132.084-.252.312-.252h1.944c.336 0 .456.144.588.492.552 1.512 1.512 2.856 1.896 2.856.144 0 .216-.072.216-.468v-1.8c-.072-.852-.504-.924-.504-1.236 0-.156.12-.288.324-.288h3.048c.264 0 .348.144.348.468v2.532c0 .264.108.348.18.348.144 0 .264-.084.528-.348.912-1.008 1.548-2.568 1.548-2.568.084-.18.228-.324.552-.324h1.944c.396 0 .48.204.396.468-.144.672-2.076 3.3-2.076 3.3-.168.276-.204.384 0 .648.144.216.66.648.996.996.612.648 1.08 1.188 1.248 1.548.168.36-.012.54-.408.54z"/></svg>VK</a>
+    </div>
+    <div style="margin-top:2.5rem;font-size:.85rem;color:rgba(255,255,255,.4)">Елена Соколова · +7 (999) 000-00-00 · @placeholder_username<br>Пн–Пт 10:00–19:00 Мск · Онлайн по всей России</div>
+  </div>
+</section>
+
+<footer class="footer-min">
+  <div>&copy; 2026, Частный бухгалтер Елена Соколова</div>
+  <div class="legal-links">
+    <button type="button" data-modal="terms">Пользовательское соглашение</button>
+    <button type="button" data-modal="privacy">Согласие на обработку данных</button>
+    <button type="button" data-modal="cookies">Уведомление о cookies</button>
+  </div>
+</footer>
+
+<!-- MODALS + COOKIES -->
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="t1"><div class="modal" tabindex="-1"><button class="modal-close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2 id="t1">Пользовательское соглашение</h2><p>Регулирует отношения между Еленой Соколовой и пользователем. Используя сайт, вы принимаете условия.</p></div></div>
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="t2"><div class="modal" tabindex="-1"><button class="modal-close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2 id="t2">Согласие на обработку данных</h2><p>Вы даёте согласие на обработку персональных данных (ФИО, телефон, email) для оказания услуг.</p></div></div>
+<div class="modal-overlay" id="modal-cookies" role="dialog" aria-modal="true" aria-labelledby="t3"><div class="modal" tabindex="-1"><button class="modal-close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2 id="t3">Уведомление о cookies</h2><p>Сайт использует cookies и Яндекс.Метрику. Продолжая использование, вы соглашаетесь.</p></div></div>
+<div class="cookies" id="cookies-banner" role="alert">
+  <div class="container"><span>Сайт использует cookies. <button type="button" data-modal="cookies" style="background:none;border:none;color:#d4a84b;text-decoration:underline;cursor:pointer;font-size:inherit;">Подробнее</button></span><button class="cookies-btn" id="cookies-accept">Принять</button></div>
+</div>
+<script>
+(function(){'use strict'
+var b=document.getElementById('cookies-banner'),a=document.getElementById('cookies-accept')
+if(localStorage.getItem('cookies_accepted')!=='true'){setTimeout(function(){b.classList.add('show')},600)}
+a.addEventListener('click',function(){localStorage.setItem('cookies_accepted','true');b.classList.remove('show')})
+var o=document.querySelectorAll('.modal-overlay')
+document.querySelectorAll('[data-modal]').forEach(function(e){e.addEventListener('click',function(e){e.preventDefault();var m=document.getElementById('modal-'+this.getAttribute('data-modal'));if(!m)return;m.classList.add('open');document.body.style.overflow='hidden';var mc=m.querySelector('.modal');if(mc)mc.focus()})})
+document.querySelectorAll('[data-close]').forEach(function(e){e.addEventListener('click',function(){o.forEach(function(i){i.classList.remove('open')});document.body.style.overflow=''})})
+o.forEach(function(m){m.addEventListener('click',function(e){if(e.target===m){o.forEach(function(i){i.classList.remove('open')});document.body.style.overflow=''}})})
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){o.forEach(function(i){i.classList.remove('open')});document.body.style.overflow=''}})
+document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){var open=item.classList.contains('open')
+document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')})
+if(!open){item.classList.add('open')}})})
+var navDots=document.querySelectorAll('.nav-dots a'),sections=document.querySelectorAll('.snap')
+function updateNav(){var t=window.scrollY+200;sections.forEach(function(s,i){var o=s.offsetTop,h=s.offsetHeight;if(t>=o&&t<o+h){navDots.forEach(function(d){d.classList.remove('active')});if(navDots[i])navDots[i].classList.add('active')}})}
+window.addEventListener('scroll',updateNav,{passive:true});updateNav()
+navDots.forEach(function(d){d.addEventListener('click',function(e){e.preventDefault();var id=this.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})})})
+var els=document.querySelectorAll('.reveal');function check(){var wh=window.innerHeight;els.forEach(function(el){if(el.getBoundingClientRect().top<wh-60)el.classList.add('visible')})}
+check();window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check,{passive:true})
+})()
+</script>
+</body>
+</html>
