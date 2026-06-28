@@ -45,21 +45,19 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .hero-trust li strong{display:block;font-size:1.5rem;font-weight:700;color:#d4a84b;margin-bottom:.15rem}
 @media(max-width:639px){.hero-trust{gap:1.5rem}.hero-trust li{text-align:center}}
 
-/* SECTION 2 — SERVICES MAGAZINE */
+/* SECTION 2 — SERVICES LIST */
 .services{background:#fff;padding:5rem 2rem}
 .services-header{max-width:700px;margin:0 auto 3rem;text-align:center}
 .services-header .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#d4a84b}
 .services-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin:.75rem 0 1rem}
 .services-header p{color:#666;font-size:1rem}
-.services-mag{display:grid;gap:2px;background:#ddd;border-radius:16px;overflow:hidden;max-width:1000px;margin:0 auto}
-@media(min-width:768px){.services-mag{grid-template-columns:1fr 1fr}}
-.service-mag-card{background:#fff;padding:2.5rem;position:relative;transition:all .4s}
-.service-mag-card:hover{background:#fefcf9}
-.service-mag-num{font-size:3rem;font-weight:800;color:rgba(212,168,75,.15);line-height:1;margin-bottom:.5rem;font-family:'Playfair Display',serif}
-.service-mag-card h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
-.service-mag-card p{font-size:.88rem;color:#666;line-height:1.55;max-width:380px}
-.service-mag-card::after{content:'→';position:absolute;bottom:1.5rem;right:1.5rem;font-size:1.2rem;color:#d4a84b;opacity:0;transition:opacity .3s}
-.service-mag-card:hover::after{opacity:1}
+.services-list{max-width:700px;margin:0 auto}
+.service-item{display:flex;gap:1.5rem;padding:1.15rem 0;border-bottom:1px solid #f0f0f0}
+.service-item:last-child{border-bottom:none}
+.service-item-num{flex-shrink:0;width:2rem;font-size:.8rem;font-weight:700;color:#d4a84b;font-family:'Playfair Display',serif;line-height:1.6}
+.service-item div{flex:1}
+.service-item h3{font-size:1rem;font-weight:600;margin-bottom:.15rem}
+.service-item p{font-size:.88rem;color:#666;line-height:1.5}
 
 /* SECTION 3 — BENEFITS TIMELINE */
 .benefits{background:#fff;padding:5rem 2rem}
@@ -188,12 +186,12 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     <h2>Что я могу сделать для вас</h2>
     <p>Каждая услуга доступна онлайн — без визитов и бумажных писем.</p>
   </div>
-  <div class="services-mag">
-    <article class="service-mag-card"><div class="service-mag-num">01</div><h3>Консультация бухгалтера</h3><p>Разбор вашей ситуации, ответы на вопросы по налогам, выбор системы налогообложения.</p></article>
-    <article class="service-mag-card"><div class="service-mag-num">02</div><h3>3-НДФЛ и вычеты</h3><p>Декларация, налоговые вычеты на обучение, лечение, жильё. Отправка через личный кабинет.</p></article>
-    <article class="service-mag-card"><div class="service-mag-num">03</div><h3>Открытие и Ликвидация ИП</h3><p>Помогу зарегистрировать ИП или закрыть. Соберу документы, заполню заявления, подам в ФНС.</p></article>
-    <article class="service-mag-card"><div class="service-mag-num">04</div><h3>Расчётный счёт для ИП</h3><p>Открою счёт в любом банке на лучших условиях. Подберу тариф под ваш бизнес.</p></article>
-    <article class="service-mag-card"><div class="service-mag-num">05</div><h3>Разовые услуги и абонентское обслуживание</h3><p>От разовой консультации до полного ведения. Выбираете формат работы под себя.</p></article>
+  <div class="services-list">
+    <div class="service-item"><div class="service-item-num">01</div><div><h3>Консультация бухгалтера</h3><p>Разбор вашей ситуации, ответы на вопросы по налогам, выбор системы налогообложения.</p></div></div>
+    <div class="service-item"><div class="service-item-num">02</div><div><h3>3-НДФЛ и вычеты</h3><p>Декларация, налоговые вычеты на обучение, лечение, жильё. Отправка через личный кабинет.</p></div></div>
+    <div class="service-item"><div class="service-item-num">03</div><div><h3>Открытие и Ликвидация ИП</h3><p>Помогу зарегистрировать ИП или закрыть. Соберу документы, заполню заявления, подам в ФНС.</p></div></div>
+    <div class="service-item"><div class="service-item-num">04</div><div><h3>Расчётный счёт для ИП</h3><p>Открою счёт в любом банке на лучших условиях. Подберу тариф под ваш бизнес.</p></div></div>
+    <div class="service-item"><div class="service-item-num">05</div><div><h3>Разовые услуги и абонентское обслуживание</h3><p>От разовой консультации до полного ведения. Выбираете формат работы под себя.</p></div></div>
   </div>
 </section>
 
